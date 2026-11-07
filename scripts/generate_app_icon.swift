@@ -1,7 +1,7 @@
 #!/usr/bin/env swift
 import AppKit
 
-let root = URL(fileURLWithPath: "/Users/neto/ARDUINO/XCODE/DLALL")
+let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
 // Made by Design/MakeIcon.swift (neon style shared with Spin).
 let source = root.appendingPathComponent("Design/AppIconSource.png")
 let outDir = root.appendingPathComponent("DLALL/Assets.xcassets/AppIcon.appiconset")

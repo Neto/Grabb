@@ -2,6 +2,7 @@ Vendor/Helpers/
 Docs/
 dist/*.pkg
 dist/*.zip
+dist/updates/
 .DS_Store
 *.orig
 xcuserdata/

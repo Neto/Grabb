@@ -4,6 +4,7 @@ import SwiftUI
 struct DLALLApp: App {
     @State private var settings: AppSettings
     @State private var model: LibraryModel
+    @StateObject private var updater = AppUpdater()
 
     init() {
         let settings = AppSettings()
@@ -46,6 +47,7 @@ struct DLALLApp: App {
                 Button("About DLALL") {
                     AppVersion.showAboutPanel()
                 }
+                CheckForUpdatesButton(updater: updater)
             }
             CommandGroup(replacing: .newItem) {
                 Button("Download from Clipboard") {

@@ -12,10 +12,16 @@ settings:
   CODE_SIGN_STYLE: Automatic
   SWIFT_VERSION: "6.0"
   MACOSX_DEPLOYMENT_TARGET: "15.0"
+packages:
+  Sparkle:
+    url: https://github.com/sparkle-project/Sparkle
+    exactVersion: 2.10.0
 targets:
   DLALL:
     type: application
     platform: macOS
+    dependencies:
+      - package: Sparkle
     sources:
       - path: DLALL
         excludes:
@@ -29,6 +35,8 @@ targets:
         PRODUCT_BUNDLE_IDENTIFIER: com.spinoff.DLALL
         PRODUCT_NAME: DLALL
         GENERATE_INFOPLIST_FILE: YES
+        # Sparkle keys (update feed and public signing key). Merged with the generated keys.
+        INFOPLIST_FILE: DLALL-Info.plist
         INFOPLIST_KEY_CFBundleDisplayName: DLALL
         INFOPLIST_KEY_CFBundleName: DLALL
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities

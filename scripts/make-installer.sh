@@ -97,6 +97,13 @@ codesign --force --options runtime --timestamp \
 codesign --force --options runtime --timestamp \
   --entitlements "$PROJ/scripts/helpers.entitlements" \
   --sign "$APP_ID" "$APP/Contents/Helpers/deno"
+# Sparkle (atualizações): os helpers internos precisam da assinatura Developer ID para notarizar.
+SPARKLE="$APP/Contents/Frameworks/Sparkle.framework"
+codesign --force --options runtime --timestamp --sign "$APP_ID" "$SPARKLE/Versions/B/XPCServices/Installer.xpc"
+codesign --force --options runtime --timestamp --preserve-metadata=entitlements --sign "$APP_ID" "$SPARKLE/Versions/B/XPCServices/Downloader.xpc"
+codesign --force --options runtime --timestamp --sign "$APP_ID" "$SPARKLE/Versions/B/Autoupdate"
+codesign --force --options runtime --timestamp --sign "$APP_ID" "$SPARKLE/Versions/B/Updater.app"
+codesign --force --options runtime --timestamp --sign "$APP_ID" "$SPARKLE"
 # app por último
 codesign --force --options runtime --timestamp \
   --entitlements "$PROJ/DLALL/DLALL.entitlements" \
@@ -182,6 +189,9 @@ spctl -a -vv -t install "$OUT_PKG"
 pkgutil --check-signature "$OUT_PKG"
 
 /bin/cp -f "$OUT_PKG" "$ARCHIVED_PKG"
+
+# --- Atualização Sparkle (zip assinado + appcast). Publica só com PUBLISH_UPDATE=1. ---
+"$PROJ/scripts/publish-update.sh" "$APP" dlall
 
 print "Instalador (Mesa): $OUT_PKG"
 print "Arquivo: $ARCHIVED_PKG"
