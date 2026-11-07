@@ -4,7 +4,7 @@
 #   scripts/publish-update.sh <path/to/App.app> <slug>
 #
 # Writes dist/updates/<App>-<version>-<build>.zip and dist/updates/<slug>/appcast.xml.
-# With PUBLISH_UPDATE=1 it also uploads them to the public repo Neto/spinoff-updates:
+# With PUBLISH_UPDATE=1 it also uploads them to the public repo Neto/mac-app-updates:
 #   - the zip goes to a GitHub Release tagged <slug>-<version>-<build>
 #   - appcast.xml goes to <slug>/appcast.xml on the main branch (the SUFeedURL in the app)
 # Release notes: RELEASE_NOTES="Short text" (optional).
@@ -16,7 +16,7 @@ set -euo pipefail
 
 APP="${1:?Usage: publish-update.sh <App.app> <slug>}"
 SLUG="${2:?Usage: publish-update.sh <App.app> <slug>}"
-UPDATES_REPO="Neto/spinoff-updates"
+UPDATES_REPO="Neto/mac-app-updates"
 SPARKLE_VERSION="2.10.0"
 SPARKLE_BIN="${SPARKLE_BIN:-$HOME/Library/Developer/Sparkle-$SPARKLE_VERSION/bin}"
 

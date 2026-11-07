@@ -468,9 +468,9 @@
 				INFOPLIST_KEY_LSMinimumSystemVersion = 15.0;
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Grabb uses Safari only when you turn on browser cookies, to download videos from your account.";
 				INFOPLIST_KEY_NSHighResolutionCapable = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Spinoff";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Mentor Neto";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.spinoff.Grabb;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mentorneto.Grabb;
 				PRODUCT_NAME = Grabb;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -496,9 +496,9 @@
 				INFOPLIST_KEY_LSMinimumSystemVersion = 15.0;
 				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Grabb uses Safari only when you turn on browser cookies, to download videos from your account.";
 				INFOPLIST_KEY_NSHighResolutionCapable = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Spinoff";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Mentor Neto";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.spinoff.Grabb;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mentorneto.Grabb;
 				PRODUCT_NAME = Grabb;
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;

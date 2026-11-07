@@ -1,6 +1,6 @@
 # Technical history
 
-Release 1.9.0 (build 21) renames DLALL to Grabb. The bundle identifier is now com.spinoff.Grabb, the update feed is grabb/appcast.xml in Neto/spinoff-updates, and the yt-dlp plugins are grabb:session and grabb:instagram-session. On the first launch, Grabb copies the DLALL settings and moves the history from Application Support/DLALL to Application Support/Grabb. The app also includes Sparkle updates (Grabb > Check for Updates…).
+Release 1.9.0 (build 21) renames DLALL to Grabb. The bundle identifier is now com.mentorneto.Grabb, the update feed is grabb/appcast.xml in Neto/mac-app-updates, and the yt-dlp plugins are grabb:session and grabb:instagram-session. The copyright is Mentor Neto and the window logo is the Grabb download arrow. On the first launch, Grabb copies the DLALL settings and moves the history from Application Support/DLALL to Application Support/Grabb. The app also includes Sparkle updates (Grabb > Check for Updates…).
 
 Release 1.8.3 (build 20) has a new app icon: a neon download arrow on a dark rounded square. The sources are Design/MakeIcon.swift and Design/AppIconSource.png.
 

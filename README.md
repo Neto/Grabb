@@ -66,7 +66,7 @@ xcodebuild -project Grabb.xcodeproj -scheme Grabb -configuration Debug \
 
 ## Credits
 
-- Original project (DLYT): Mentor Neto, Spinoff.
+- Original project (DLYT): Mentor Neto.
 - Features added in the BaixaTudo version: Ricardo Cavallini. These are the quality selector, Instagram photos and Stories, separate cookie settings, the diagnostics, and the yt-dlp packaging changes. Git history keeps his authorship.
 - Tools: yt-dlp, FFmpeg, and Deno, under their own licenses.
 - The experimental Stories fix is adapted from yt-dlp PR 17885. See `Grabb/Resources/Diagnostics/STORIES-FIX.md`.
@@ -75,4 +75,4 @@ xcodebuild -project Grabb.xcodeproj -scheme Grabb -configuration Debug \
 
 This repository has no license file. Publishing the source code does not grant a license to reuse, change, or redistribute it.
 
-(c) 2026 Spinoff and the contributors.
+(c) 2026 Mentor Neto and the contributors.

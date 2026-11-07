@@ -132,7 +132,7 @@ mkdir -p "$PKG_DIR"
 MARKETING="$(defaults read "$APP/Contents/Info" CFBundleShortVersionString)"
 BUILD="$(defaults read "$APP/Contents/Info" CFBundleVersion)"
 
-pkgbuild --identifier com.spinoff.Grabb \
+pkgbuild --identifier com.mentorneto.Grabb \
   --version "$MARKETING" \
   --install-location /Applications \
   --component "$STAGE/Grabb.app" \
@@ -142,20 +142,20 @@ cat > "$PKG_DIR/distribution.xml" << EOF
 <?xml version="1.0" encoding="utf-8"?>
 <installer-gui-script minSpecVersion="2">
     <title>Grabb</title>
-    <organization>com.spinoff</organization>
+    <organization>com.mentorneto</organization>
     <options customize="never" require-scripts="false" hostArchitectures="arm64"/>
     <welcome file="welcome.html" mime-type="text/html"/>
-    <pkg-ref id="com.spinoff.Grabb"/>
+    <pkg-ref id="com.mentorneto.Grabb"/>
     <choices-outline>
         <line choice="default">
-            <line choice="com.spinoff.Grabb"/>
+            <line choice="com.mentorneto.Grabb"/>
         </line>
     </choices-outline>
     <choice id="default"/>
-    <choice id="com.spinoff.Grabb" visible="false">
-        <pkg-ref id="com.spinoff.Grabb"/>
+    <choice id="com.mentorneto.Grabb" visible="false">
+        <pkg-ref id="com.mentorneto.Grabb"/>
     </choice>
-    <pkg-ref id="com.spinoff.Grabb" version="$MARKETING" onConclusion="none">Grabb-component.pkg</pkg-ref>
+    <pkg-ref id="com.mentorneto.Grabb" version="$MARKETING" onConclusion="none">Grabb-component.pkg</pkg-ref>
 </installer-gui-script>
 EOF
 
@@ -189,7 +189,14 @@ xcrun stapler validate "$OUT_PKG"
 spctl -a -vv -t install "$OUT_PKG"
 pkgutil --check-signature "$OUT_PKG"
 
-/bin/cp -f "$OUT_PKG" "$ARCHIVED_PKG"
+# O que o comprador baixa: o pkg com o ícone do app e uma seta verde, num zip que preserva o
+# ícone no download (o Utilitário de Compressão restaura o ícone ao abrir o zip).
+swift "$PROJ/Design/MakeInstallerIcon.swift" "$PROJ/Design/AppIconSource.png" "$OUT_PKG"
+/usr/bin/ditto "$OUT_PKG" "$ARCHIVED_PKG"
+DOWNLOAD_ZIP="${ARCHIVE_DIR}/Grabb-${MARKETING}.zip"
+rm -f "$DOWNLOAD_ZIP"
+/usr/bin/ditto -c -k --sequesterRsrc "$OUT_PKG" "$DOWNLOAD_ZIP"
+print "Download para compradores: $DOWNLOAD_ZIP"
 
 # --- Atualização Sparkle (zip assinado + appcast). Publica só com PUBLISH_UPDATE=1. ---
 "$PROJ/scripts/publish-update.sh" "$APP" grabb

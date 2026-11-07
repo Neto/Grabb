@@ -60,7 +60,7 @@ cat > "$HELPERS/yt-dlp.bundle/Info.plist" <<'PLIST'
 <plist version="1.0">
 <dict>
   <key>CFBundleExecutable</key><string>yt-dlp</string>
-  <key>CFBundleIdentifier</key><string>com.spinoff.ytdlp</string>
+  <key>CFBundleIdentifier</key><string>com.mentorneto.ytdlp</string>
   <key>CFBundlePackageType</key><string>BNDL</string>
 </dict>
 </plist>

@@ -1,10 +1,11 @@
 import Foundation
 
-/// Grabb used to be called DLALL (bundle id com.spinoff.DLALL). On the first launch of Grabb,
-/// this copies the old settings and moves the old history so nothing is lost after the rename.
+/// Grabb used to be called DLALL, and has had two earlier bundle identifiers. On the first launch
+/// of this version, it copies the old settings and moves the old history so nothing is lost.
 enum LegacyDataMigration {
-    private static let legacyBundleID = "com.spinoff.DLALL"
-    private static let doneKey = "migratedFromDLALL"
+    /// Newest first: a setting found in a newer identifier wins.
+    private static let legacyBundleIDs = ["com.spinoff.Grabb", "com.spinoff.DLALL"]
+    private static let doneKey = "migratedLegacySettings"
 
     static func runIfNeeded(defaults: UserDefaults = .standard, fileManager: FileManager = .default) {
         guard !defaults.bool(forKey: doneKey) else { return }
@@ -12,7 +13,8 @@ enum LegacyDataMigration {
 
         // Settings: output folder, cookie browsers, tutorial seen, diagnostics.
         // Window frames and Sparkle state are left behind; they belong to the old app.
-        if let old = defaults.persistentDomain(forName: legacyBundleID) {
+        for id in legacyBundleIDs {
+            guard let old = defaults.persistentDomain(forName: id) else { continue }
             for (key, value) in old where !key.hasPrefix("NSWindow Frame") && !key.hasPrefix("SU")
                 && !key.hasPrefix("NSNav") && !key.hasPrefix("NSOSP") && defaults.object(forKey: key) == nil {
                 defaults.set(value, forKey: key)

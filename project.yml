@@ -1,6 +1,6 @@
 name: Grabb
 options:
-  bundleIdPrefix: com.spinoff
+  bundleIdPrefix: com.mentorneto
   deploymentTarget:
     macOS: "15.0"
   createIntermediateGroups: true
@@ -32,7 +32,7 @@ targets:
         buildPhase: resources
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.spinoff.Grabb
+        PRODUCT_BUNDLE_IDENTIFIER: com.mentorneto.Grabb
         PRODUCT_NAME: Grabb
         GENERATE_INFOPLIST_FILE: YES
         # Sparkle keys (update feed and public signing key). Merged with the generated keys.
@@ -40,7 +40,7 @@ targets:
         INFOPLIST_KEY_CFBundleDisplayName: Grabb
         INFOPLIST_KEY_CFBundleName: Grabb
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
-        INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 Spinoff"
+        INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 Mentor Neto"
         INFOPLIST_KEY_NSHighResolutionCapable: YES
         INFOPLIST_KEY_LSMinimumSystemVersion: "15.0"
         INFOPLIST_KEY_NSAppleEventsUsageDescription: "Grabb uses Safari only when you turn on browser cookies, to download videos from your account."

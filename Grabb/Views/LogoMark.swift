@@ -1,7 +1,7 @@
 import SwiftUI
 import AppKit
 
-/// The Grabb logo (white glyph) on an indigo rounded square.
+/// The Grabb logo (white download arrow) on an indigo rounded square.
 /// Used in the bottom right corner of the app window and of the tutorial mock window.
 struct LogoMark: View {
     var size: CGFloat = 24

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>SUFeedURL</key>
-	<string>https://raw.githubusercontent.com/Neto/spinoff-updates/main/grabb/appcast.xml</string>
+	<string>https://raw.githubusercontent.com/Neto/mac-app-updates/main/grabb/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>24rE0d0bh5gUwr4ENU86oYzcRxSEuwOVQfvkXJRDpPQ=</string>
 	<key>SUEnableAutomaticChecks</key>
