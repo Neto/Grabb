@@ -2,7 +2,7 @@ import Combine
 import Sparkle
 import SwiftUI
 
-/// Sparkle updates. The feed address and the public signing key live in DLALL-Info.plist.
+/// Sparkle updates. The feed address and the public signing key live in Grabb-Info.plist.
 /// Sparkle checks once a day and shows its own window when a new version is available.
 @MainActor
 final class AppUpdater: ObservableObject {

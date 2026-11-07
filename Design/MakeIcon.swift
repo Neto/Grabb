@@ -1,4 +1,4 @@
-// Generates the DLALL app icon in the same style as Spin: a thin neon
+// Generates the Grabb app icon in the same style as Spin: a thin neon
 // download arrow and tray on a dark squircle.
 // Usage: swift Design/MakeIcon.swift <output-folder>
 // Writes AppIconSource.png (1024 x 1024). Then run scripts/generate_app_icon.swift.

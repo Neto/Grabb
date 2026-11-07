@@ -7,7 +7,7 @@ enum BinaryLocator: Sendable {
         "/opt/homebrew/sbin",
     ]
 
-    /// `DLALL.app/Contents/Helpers` — yt-dlp, ffmpeg, deno empacotados no app.
+    /// `Grabb.app/Contents/Helpers` — yt-dlp, ffmpeg, deno empacotados no app.
     static var bundledHelpersDirectory: URL? {
         let url = Bundle.main.bundleURL.appendingPathComponent("Contents/Helpers", isDirectory: true)
         var isDir: ObjCBool = false

@@ -1,0 +1,21 @@
+---
+description: Instalar Grabb em /Applications, arquivar o .pkg e deixar um novo na Mesa
+alwaysApply: true
+---
+
+# Grabb — instalar, arquivar, Mesa
+
+O app publicado é **sempre** `/Applications/Grabb.app`. Versão nova **substitui** esse path. Nunca `Grabb 2.app`.
+
+Arquivo permanente dos instaladores: **`dist/Grabb-{MARKETING}-{BUILD}.pkg`** (ex.: `dist/Grabb-1.4-5.pkg`).
+
+Depois de qualquer mudança de código do app:
+
+1. Atualize a versão em `project.yml` (`MARKETING_VERSION` / `CURRENT_PROJECT_VERSION`) e rode `xcodegen generate`.
+2. Publique com `./scripts/make-installer.sh` (não só o Debug local). Esse script:
+   - substitui `/Applications/Grabb.app`
+   - grava `dist/Grabb-{versão}-{build}.pkg`
+   - deixa **`~/Desktop/Grabb.pkg`** — o da vez, para mandar aos amigos
+3. Relance `/Applications/Grabb.app`.
+
+Não declare a tarefa concluída sem o replace em `/Applications` e o `.pkg` novo na Mesa **e** em `dist/`.

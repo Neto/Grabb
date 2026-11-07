@@ -1,13 +1,13 @@
 import Foundation
 
-/// Salva e lê o histórico em `~/Library/Application Support/DLALL/history.json`.
+/// Salva e lê o histórico em `~/Library/Application Support/Grabb/history.json`.
 enum HistoryStore {
     static var fileURL: URL {
         let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first
             ?? URL(fileURLWithPath: NSHomeDirectory(), isDirectory: true)
                 .appendingPathComponent("Library/Application Support", isDirectory: true)
         return base
-            .appendingPathComponent("DLALL", isDirectory: true)
+            .appendingPathComponent("Grabb", isDirectory: true)
             .appendingPathComponent("history.json")
     }
 

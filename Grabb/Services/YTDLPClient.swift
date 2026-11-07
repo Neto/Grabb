@@ -12,9 +12,9 @@ enum YTDLPError: LocalizedError, Sendable {
     var errorDescription: String? {
         switch self {
         case .binaryMissing:
-            "The download components are missing from this app. Reinstall DLALL."
+            "The download components are missing from this app. Reinstall Grabb."
         case .ffmpegMissing:
-            "The video converter is missing from this app. Reinstall DLALL."
+            "The video converter is missing from this app. Reinstall Grabb."
         case .invalidURL:
             "Invalid URL."
         case .cancelled:
@@ -34,9 +34,9 @@ enum YTDLPClient: Sendable {
         "%(.{id,title,thumbnail,duration,uploader,channel,webpage_url,original_url,extractor,extractor_key,formats})j"
 
     static let loginMessage =
-        "This link needs a login. Sign in to your account in Safari or Chrome (DLALL uses the browser cookies automatically). Then try again."
+        "This link needs a login. Sign in to your account in Safari or Chrome (Grabb uses the browser cookies automatically). Then try again."
     static let permissionMessage =
-        "DLALL could not read the browser cookies. Open System Settings > Privacy & Security > Full Disk Access, turn on DLALL, and try again."
+        "Grabb could not read the browser cookies. Open System Settings > Privacy & Security > Full Disk Access, turn on Grabb, and try again."
 
     /// Carrega cookies com o mesmo helper do download, mas usa um extrator local sem rede.
     static func checkInstagramSession(customBinary: String, cookies: BrowserCookies) async throws -> String {
@@ -51,10 +51,10 @@ enum YTDLPClient: Sendable {
             arguments: [
                 "--ignore-config", "--no-update", "--no-colors", "--verbose",
                 "--no-plugin-dirs", "--plugin-dirs", plugins.path,
-                "--use-extractors", "dlall:session",
+                "--use-extractors", "grabb:session",
                 "--simulate", "--retries", "0", "--extractor-retries", "0",
                 "--cookies-from-browser", browser,
-                "dlall:instagram-session",
+                "grabb:instagram-session",
             ],
             timeout: .seconds(45),
             onLine: { _ in }
@@ -499,7 +499,7 @@ enum YTDLPClient: Sendable {
 
         guard let ffmpeg = BinaryLocator.findFFmpeg() else { throw YTDLPError.ffmpegMissing }
         let temp = url.deletingLastPathComponent()
-            .appendingPathComponent(".\(url.deletingPathExtension().lastPathComponent).dlall-qt.mp4")
+            .appendingPathComponent(".\(url.deletingPathExtension().lastPathComponent).grabb-qt.mp4")
 
         // `-r` só se aplica reconvertendo; com `-c:v copy` ffmpeg recusa mudar o fps.
         let fpsArgs = (videoOK ? nil : targetFPS).map { ["-r", "\($0)"] } ?? []
@@ -799,7 +799,7 @@ enum YTDLPClient: Sendable {
     static func friendlyMessage(from log: String, url: String) -> String {
         let lower = log.lowercased()
         if lower.contains("vimeo"), lower.contains("password") {
-            return "This Vimeo video has a password. DLALL does not support password-protected videos yet."
+            return "This Vimeo video has a password. Grabb does not support password-protected videos yet."
         }
         if lower.contains("vimeo"), lower.contains("referer") || lower.contains("embedding") {
             return "This Vimeo video plays only when embedded in another site. Open the page that shows it and paste the link of that page."
@@ -864,7 +864,7 @@ private final class ProcessSession: @unchecked Sendable {
         process.standardInput = FileHandle.nullDevice
 
         let startedAt = Date()
-        let diagnostic = (DiagnosticLog.isEnabled || arguments.contains("dlall:instagram-session"))
+        let diagnostic = (DiagnosticLog.isEnabled || arguments.contains("grabb:instagram-session"))
             ? DiagnosticRun(binary: binary, arguments: arguments) : nil
         let stdoutReader = LineAssembler(onLine: { line in
             // O JSON de metadados inclui URLs assinadas e não deve ir para o log.

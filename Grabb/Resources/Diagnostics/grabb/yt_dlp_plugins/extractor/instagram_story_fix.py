@@ -8,7 +8,7 @@ from yt_dlp.extractor.instagram import InstagramStoryIE as _InstagramStoryIE, _p
 from yt_dlp.utils import ExtractorError, filter_dict, str_or_none, traverse_obj, urlencode_postdata
 
 
-class InstagramStoryFixIE(_InstagramStoryIE, plugin_name='DLALLStoriesPR17885'):
+class InstagramStoryFixIE(_InstagramStoryIE, plugin_name='GrabbStoriesPR17885'):
     _DTSG = None
 
     def _get_fb_dstg(self, webpage=None):
@@ -52,7 +52,7 @@ class InstagramStoryFixIE(_InstagramStoryIE, plugin_name='DLALLStoriesPR17885'):
         return user_id
 
     def _real_extract(self, url):
-        self.to_screen('DLALL Stories fix: PR17885@3e089b4 (bounded profile lookup)')
+        self.to_screen('Grabb Stories fix: PR17885@3e089b4 (bounded profile lookup)')
         username, story_id = self._match_valid_url(url).group('user', 'id')
         if username == 'highlights' and not story_id:  # story id is only mandatory for highlights
             raise ExtractorError('Input URL is missing a highlight ID', expected=True)
@@ -127,7 +127,7 @@ class InstagramStoryFixIE(_InstagramStoryIE, plugin_name='DLALLStoriesPR17885'):
         for highlight in highlights:
             highlight.setdefault('user', {}).update(user_info)
             highlight_data = self._extract_product(highlight)
-            # Keep image Stories too; DLALL already downloads Instagram photos as thumbnails.
+            # Keep image Stories too; Grabb already downloads Instagram photos as thumbnails.
             if highlight_data.get('formats') or highlight_data.get('thumbnails'):
                 info_data.append({
                     'uploader': full_name,

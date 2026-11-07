@@ -17,7 +17,7 @@ enum DiagnosticLog: Sendable {
 
     static var directory: URL {
         FileManager.default.homeDirectoryForCurrentUser
-            .appendingPathComponent("Library/Logs/DLALL", isDirectory: true)
+            .appendingPathComponent("Library/Logs/Grabb", isDirectory: true)
     }
 
     /// Não habilitamos dump de páginas, cabeçalhos HTTP ou exportação de cookies.
@@ -57,12 +57,12 @@ enum DiagnosticLog: Sendable {
             _ = try handle.seekToEnd()
             try handle.write(contentsOf: Data(line.utf8))
         } catch {
-            NSLog("DLALL: failed to write diagnostics (%@)", error.localizedDescription)
+            NSLog("Grabb: failed to write diagnostics (%@)", error.localizedDescription)
         }
     }
 
     static func write(_ message: String) {
-        let url = directory.deletingLastPathComponent().appendingPathComponent("DLALL.log")
+        let url = directory.deletingLastPathComponent().appendingPathComponent("Grabb.log")
         append(String(message.suffix(1500)), to: url)
     }
 }

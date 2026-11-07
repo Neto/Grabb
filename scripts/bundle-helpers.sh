@@ -38,9 +38,9 @@ if [ ! -x /opt/homebrew/bin/python3.11 ]; then
   echo "python3.11 do Homebrew não encontrado. Rode: brew install python@3.11" >&2
   exit 1
 fi
-YT_BUILD_VENV="/tmp/dlall-ytdlp-build-venv"
-YT_BUILD_WORK="/tmp/dlall-ytdlp-build-work"
-YT_BUILD_OUT="/tmp/dlall-ytdlp-build-out"
+YT_BUILD_VENV="/tmp/grabb-ytdlp-build-venv"
+YT_BUILD_WORK="/tmp/grabb-ytdlp-build-work"
+YT_BUILD_OUT="/tmp/grabb-ytdlp-build-out"
 rm -rf "$YT_BUILD_VENV" "$YT_BUILD_WORK" "$YT_BUILD_OUT"
 /opt/homebrew/bin/python3.11 -m venv "$YT_BUILD_VENV"
 "$YT_BUILD_VENV/bin/pip" install --quiet --upgrade pip

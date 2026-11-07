@@ -26,7 +26,7 @@ enum Upscaler {
 
         var errorDescription: String? {
             switch self {
-            case .unreadable: "The video downloaded, but DLALL could not read it for upscaling."
+            case .unreadable: "The video downloaded, but Grabb could not read it for upscaling."
             case .modelDownloadFailed(let message): "The upscale model could not be downloaded. \(message)"
             case .processingFailed(let message): "The upscale failed. \(message)"
             }
@@ -119,7 +119,7 @@ enum Upscaler {
     ) async throws -> URL {
         guard let ffmpeg = BinaryLocator.findFFmpeg() else { throw YTDLPError.ffmpegMissing }
         let temp = original.deletingLastPathComponent()
-            .appendingPathComponent(".\(original.deletingPathExtension().lastPathComponent).dlall-up.mp4")
+            .appendingPathComponent(".\(original.deletingPathExtension().lastPathComponent).grabb-up.mp4")
         try? FileManager.default.removeItem(at: temp)
 
         let landscape = width >= height
@@ -221,7 +221,7 @@ private enum MLUpscaler {
         let outWidth = width * factor
         let outHeight = height * factor
         let temp = source.deletingLastPathComponent()
-            .appendingPathComponent(".\(source.deletingPathExtension().lastPathComponent).dlall-ml.mp4")
+            .appendingPathComponent(".\(source.deletingPathExtension().lastPathComponent).grabb-ml.mp4")
         try? FileManager.default.removeItem(at: temp)
 
         // Reader

@@ -1,0 +1,552 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		043EEDB150776FFBE1A22811 /* HistoryEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF3ECD244BAA2001BF9B1DD /* HistoryEntry.swift */; };
+		05935F90AEA34A77EA006E30 /* BrowserCookies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6B44646CF6E4165A1F16B9 /* BrowserCookies.swift */; };
+		076B089CFD8B45EF8A60238E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421138DFF8D4833BD0A447A7 /* SettingsView.swift */; };
+		13CB4ED5EAAF90B45A877AC7 /* Upscaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8247A1C34A762BBBBCADFC9 /* Upscaler.swift */; };
+		1530CA3143BCE0DA4FDD3971 /* Diagnostics in Resources */ = {isa = PBXBuildFile; fileRef = F66A7D34D247773500EFF9E8 /* Diagnostics */; };
+		1871944CB154F5FCD8280C30 /* YTDLPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8FDBF32438BDC4F33DFB59 /* YTDLPClient.swift */; };
+		31D9245FEAC1F7E592E22738 /* MediaPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8CB55AE7FB42BB3EF0E974 /* MediaPlatform.swift */; };
+		5581BD07F3829524715EF89C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0F42821CF7494D9615364D /* RootView.swift */; };
+		5781DD69BA40B7DA93C7D2C9 /* DownloadJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12455F3F6FBA830F66C2BAD /* DownloadJob.swift */; };
+		6C48C9CB9FB229B699A77087 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDAA23E51EA899B5DE1FBF1B /* Assets.xcassets */; };
+		6E6916D038E84B14D636954A /* GrabbLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AF4409F9A6CE0674BEF4A79 /* GrabbLogo.png */; };
+		80C701AE15E631FEB3353664 /* HeaderBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8115A9B29980127AC6C25A4 /* HeaderBarView.swift */; };
+		8629B9D0DA4B8E474FB03BB3 /* GrabbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C7A6C5B5A80B59146ECCA /* GrabbApp.swift */; };
+		866D8AC7D0F5E4917C218977 /* ComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF082A55F45B9616294C1A5 /* ComposerView.swift */; };
+		89BDD88B88DB827E16C08B0C /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7B6ABC2EAE0B884A60A0A /* TutorialView.swift */; };
+		9D847CE800AD78935C014AC9 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C15A46A7676E4B70786CDF /* AppVersion.swift */; };
+		9E0E421151E5A3A253351CF9 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB2E4CD7A5A520F5E37D09 /* VideoInfo.swift */; };
+		A0D58475D5071B4862A08E98 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D31677E58351CC7B2B72B /* AppSettings.swift */; };
+		A761A97E9DF2291077EF192F /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7250ADBE87F692C031B81B86 /* HistoryView.swift */; };
+		B1B6CBE1293D171FC93BB236 /* LibraryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0955AEFBECE97F384A1AA7BB /* LibraryModel.swift */; };
+		B8AD6B5AF1F5BB51240A4760 /* DiagnosticLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAA4CC90AD0FF0E8001D9FC /* DiagnosticLog.swift */; };
+		C01C7B761D7398BB2726D3A0 /* BinaryLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF60F5F1C889CAD6A1FC9D7E /* BinaryLocator.swift */; };
+		C0D01888F9D52D54A0B2F0D1 /* AppUpdater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC33C1CCEABD078DD43395 /* AppUpdater.swift */; };
+		C3DA20CED80F08D086B23E96 /* Sparkle in Frameworks */ = {isa = PBXBuildFile; productRef = 8A904D44C59966329BBC79C0 /* Sparkle */; };
+		C7FE854131130C7CD634950C /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2C8A4AACB1E5141699A6BF /* HistoryStore.swift */; };
+		C8E0BD0EFE9EBA025D7ED4F1 /* RequestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5ADA84570D810D3F8680E0C /* RequestCard.swift */; };
+		C957CD2F9AAD08DA3C8A9FF3 /* VideoQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69F7920F7AEB376494AB23E /* VideoQuality.swift */; };
+		D863ACED95F6A433A2FE5BCE /* LegacyDataMigration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6CEF69461AF74A355C097D /* LegacyDataMigration.swift */; };
+		DCA08695A3F0C6094556F92F /* JobRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59E16AE37A66BD0C446C8D /* JobRowView.swift */; };
+		E03BA71C20454D6706546D3A /* Funk.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 89B3914DC03E62044A3429BF /* Funk.aiff */; };
+		E9AEC1ACCCE0441956029B55 /* LogoMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57060052B3289C738C6FBAB2 /* LogoMark.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		02C15A46A7676E4B70786CDF /* AppVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
+		0955AEFBECE97F384A1AA7BB /* LibraryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryModel.swift; sourceTree = "<group>"; };
+		0AF082A55F45B9616294C1A5 /* ComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerView.swift; sourceTree = "<group>"; };
+		0C6CEF69461AF74A355C097D /* LegacyDataMigration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegacyDataMigration.swift; sourceTree = "<group>"; };
+		3B84876661DBA6D2EA73D487 /* Grabb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grabb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B8FDBF32438BDC4F33DFB59 /* YTDLPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTDLPClient.swift; sourceTree = "<group>"; };
+		3E03B2B03F55CA0CA962AC89 /* Grabb.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Grabb.entitlements; sourceTree = "<group>"; };
+		421138DFF8D4833BD0A447A7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4A2C8A4AACB1E5141699A6BF /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
+		57060052B3289C738C6FBAB2 /* LogoMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoMark.swift; sourceTree = "<group>"; };
+		5B6B44646CF6E4165A1F16B9 /* BrowserCookies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserCookies.swift; sourceTree = "<group>"; };
+		5CAA4CC90AD0FF0E8001D9FC /* DiagnosticLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticLog.swift; sourceTree = "<group>"; };
+		5F0F42821CF7494D9615364D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		6AF4409F9A6CE0674BEF4A79 /* GrabbLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrabbLogo.png; sourceTree = "<group>"; };
+		6E1C7A6C5B5A80B59146ECCA /* GrabbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrabbApp.swift; sourceTree = "<group>"; };
+		7250ADBE87F692C031B81B86 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		800D31677E58351CC7B2B72B /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		89B3914DC03E62044A3429BF /* Funk.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Funk.aiff; sourceTree = "<group>"; };
+		8EF7B6ABC2EAE0B884A60A0A /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		AA59E16AE37A66BD0C446C8D /* JobRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRowView.swift; sourceTree = "<group>"; };
+		BD8CB55AE7FB42BB3EF0E974 /* MediaPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlatform.swift; sourceTree = "<group>"; };
+		C69F7920F7AEB376494AB23E /* VideoQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoQuality.swift; sourceTree = "<group>"; };
+		C8115A9B29980127AC6C25A4 /* HeaderBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderBarView.swift; sourceTree = "<group>"; };
+		D12455F3F6FBA830F66C2BAD /* DownloadJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadJob.swift; sourceTree = "<group>"; };
+		DDAA23E51EA899B5DE1FBF1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDF3ECD244BAA2001BF9B1DD /* HistoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = "<group>"; };
+		E1CC33C1CCEABD078DD43395 /* AppUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdater.swift; sourceTree = "<group>"; };
+		E5ADA84570D810D3F8680E0C /* RequestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCard.swift; sourceTree = "<group>"; };
+		EECB2E4CD7A5A520F5E37D09 /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
+		F66A7D34D247773500EFF9E8 /* Diagnostics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Diagnostics; path = Grabb/Resources/Diagnostics; sourceTree = SOURCE_ROOT; };
+		F8247A1C34A762BBBBCADFC9 /* Upscaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upscaler.swift; sourceTree = "<group>"; };
+		FF60F5F1C889CAD6A1FC9D7E /* BinaryLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryLocator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1280C3C331D742F9CF0EC2E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3DA20CED80F08D086B23E96 /* Sparkle in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		319F6CF41FD4082C061BFA10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B6B44646CF6E4165A1F16B9 /* BrowserCookies.swift */,
+				D12455F3F6FBA830F66C2BAD /* DownloadJob.swift */,
+				DDF3ECD244BAA2001BF9B1DD /* HistoryEntry.swift */,
+				BD8CB55AE7FB42BB3EF0E974 /* MediaPlatform.swift */,
+				EECB2E4CD7A5A520F5E37D09 /* VideoInfo.swift */,
+				C69F7920F7AEB376494AB23E /* VideoQuality.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5766F79015F76DC76F331E8B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0955AEFBECE97F384A1AA7BB /* LibraryModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8DD14A0A17CDC849C384A67B /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				800D31677E58351CC7B2B72B /* AppSettings.swift */,
+				0C6CEF69461AF74A355C097D /* LegacyDataMigration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		999EAD94238669BA559E53C9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E1CC33C1CCEABD078DD43395 /* AppUpdater.swift */,
+				FF60F5F1C889CAD6A1FC9D7E /* BinaryLocator.swift */,
+				5CAA4CC90AD0FF0E8001D9FC /* DiagnosticLog.swift */,
+				4A2C8A4AACB1E5141699A6BF /* HistoryStore.swift */,
+				F8247A1C34A762BBBBCADFC9 /* Upscaler.swift */,
+				3B8FDBF32438BDC4F33DFB59 /* YTDLPClient.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A77A00A05B834915C412740D /* Grabb */ = {
+			isa = PBXGroup;
+			children = (
+				02C15A46A7676E4B70786CDF /* AppVersion.swift */,
+				DDAA23E51EA899B5DE1FBF1B /* Assets.xcassets */,
+				3E03B2B03F55CA0CA962AC89 /* Grabb.entitlements */,
+				6E1C7A6C5B5A80B59146ECCA /* GrabbApp.swift */,
+				8DD14A0A17CDC849C384A67B /* Configuration */,
+				319F6CF41FD4082C061BFA10 /* Models */,
+				CC269E029FBDF02AB5B601E0 /* Resources */,
+				999EAD94238669BA559E53C9 /* Services */,
+				5766F79015F76DC76F331E8B /* ViewModels */,
+				F196A2498402BC7B22055DE4 /* Views */,
+			);
+			path = Grabb;
+			sourceTree = "<group>";
+		};
+		CC269E029FBDF02AB5B601E0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F66A7D34D247773500EFF9E8 /* Diagnostics */,
+				89B3914DC03E62044A3429BF /* Funk.aiff */,
+				6AF4409F9A6CE0674BEF4A79 /* GrabbLogo.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D7D737BA7AA878320A4B50AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B84876661DBA6D2EA73D487 /* Grabb.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F196A2498402BC7B22055DE4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AF082A55F45B9616294C1A5 /* ComposerView.swift */,
+				C8115A9B29980127AC6C25A4 /* HeaderBarView.swift */,
+				7250ADBE87F692C031B81B86 /* HistoryView.swift */,
+				AA59E16AE37A66BD0C446C8D /* JobRowView.swift */,
+				57060052B3289C738C6FBAB2 /* LogoMark.swift */,
+				E5ADA84570D810D3F8680E0C /* RequestCard.swift */,
+				5F0F42821CF7494D9615364D /* RootView.swift */,
+				421138DFF8D4833BD0A447A7 /* SettingsView.swift */,
+				8EF7B6ABC2EAE0B884A60A0A /* TutorialView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F9A07AA83124A3A7F5F7B500 = {
+			isa = PBXGroup;
+			children = (
+				A77A00A05B834915C412740D /* Grabb */,
+				D7D737BA7AA878320A4B50AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5D1004EDBCB5CF9F09F4E037 /* Grabb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 332F8A130F95D74BE0414DFA /* Build configuration list for PBXNativeTarget "Grabb" */;
+			buildPhases = (
+				2DC1F79BE521854D4868C601 /* Sources */,
+				BE6DBB072837FEA24D3E381C /* Resources */,
+				1280C3C331D742F9CF0EC2E8 /* Frameworks */,
+				091CF9477F379C1780C672AA /* Embed Helpers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Grabb;
+			packageProductDependencies = (
+				8A904D44C59966329BBC79C0 /* Sparkle */,
+			);
+			productName = Grabb;
+			productReference = 3B84876661DBA6D2EA73D487 /* Grabb.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9DA5D4B106D75432C4EDD9F5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					5D1004EDBCB5CF9F09F4E037 = {
+						DevelopmentTeam = FDWHNL3X82;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = E5A7EC20527F484ADA477630 /* Build configuration list for PBXProject "Grabb" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F9A07AA83124A3A7F5F7B500;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3D757B930E865597D728DF51 /* XCRemoteSwiftPackageReference "Sparkle" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = D7D737BA7AA878320A4B50AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5D1004EDBCB5CF9F09F4E037 /* Grabb */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BE6DBB072837FEA24D3E381C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C48C9CB9FB229B699A77087 /* Assets.xcassets in Resources */,
+				1530CA3143BCE0DA4FDD3971 /* Diagnostics in Resources */,
+				E03BA71C20454D6706546D3A /* Funk.aiff in Resources */,
+				6E6916D038E84B14D636954A /* GrabbLogo.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		091CF9477F379C1780C672AA /* Embed Helpers */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Helpers";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n# Copia yt-dlp, ffmpeg, ffprobe e deno (Vendor/Helpers) para dentro do app recém-buildado.\n# Não toca em /Applications.\nset -e\n\nif [ -n \"${TARGET_BUILD_DIR:-}\" ] && [ -n \"${FULL_PRODUCT_NAME:-}\" ]; then\n  APP=\"${TARGET_BUILD_DIR}/${FULL_PRODUCT_NAME}\"\n  case \"${TARGET_BUILD_DIR}\" in\n    *Index.noindex*|*Preview*|*Previews*)\n      exit 0\n      ;;\n  esac\nelse\n  APP=\"${1:-}\"\nfi\n\nif [ -z \"$APP\" ] || [ ! -d \"$APP\" ]; then\n  echo \"Grabb.app não encontrado para empacotar helpers.\" >&2\n  exit 1\nfi\n\nif [ ! -f \"$APP/Contents/Info.plist\" ]; then\n  echo \"Pacote inválido: $APP\" >&2\n  exit 1\nfi\n\nHELPERS_SRC=\"\"\nif [ -n \"${SRCROOT:-}\" ] && [ -d \"${SRCROOT}/Vendor/Helpers\" ]; then\n  HELPERS_SRC=\"${SRCROOT}/Vendor/Helpers\"\nelif [ -d \"$(dirname \"$0\")/../Vendor/Helpers\" ]; then\n  HELPERS_SRC=\"$(cd \"$(dirname \"$0\")/../Vendor/Helpers\" && pwd)\"\nfi\nif [ -n \"$HELPERS_SRC\" ] && [ -x \"$HELPERS_SRC/yt-dlp.bundle/yt-dlp\" ]; then\n  /bin/mkdir -p \"$APP/Contents/Helpers\"\n  /usr/bin/rsync -a --delete \"$HELPERS_SRC/\" \"$APP/Contents/Helpers/\"\n  if [ -n \"${EXPANDED_CODE_SIGN_IDENTITY:-}\" ] && [ \"${EXPANDED_CODE_SIGN_IDENTITY}\" != \"-\" ]; then\n    HELPERS_ENT=\"\"\n    if [ -n \"${SRCROOT:-}\" ] && [ -f \"${SRCROOT}/scripts/helpers.entitlements\" ]; then\n      HELPERS_ENT=\"${SRCROOT}/scripts/helpers.entitlements\"\n    elif [ -f \"$(dirname \"$0\")/helpers.entitlements\" ]; then\n      HELPERS_ENT=\"$(dirname \"$0\")/helpers.entitlements\"\n    fi\n    # Assina as .dylib do ffmpeg/ffprobe primeiro, com o mesmo Team ID — sem isso, hardened\n    # runtime recusa carregá-las (Team ID diferente do binário que as carrega).\n    if [ -d \"$APP/Contents/Helpers/lib\" ]; then\n      find \"$APP/Contents/Helpers/lib\" -name '*.dylib' -print0 | xargs -0 -I{} /usr/bin/codesign --force --options runtime --sign \"${EXPANDED_CODE_SIGN_IDENTITY}\" {} >/dev/null 2>&1 || true\n    fi\n    # yt-dlp (PyInstaller) e deno (V8/JIT) travam sob hardened runtime sem permissão de JIT —\n    # assina os dois com entitlements próprios, nunca com --deep a partir do app (que aplicaria\n    # os entitlements do app, sem allow-jit, e quebraria o solver de desafio JS do YouTube).\n    # yt-dlp agora é uma pasta onedir (yt-dlp.bundle/, com Info.plist) em vez de onefile — onefile\n    # se autoextrai a cada execução (~7s de startup toda chamada); onedir já vem descompactado.\n    # A extensão .bundle é obrigatória: sem ela o codesign do app tenta validar o conteúdo de\n    # _internal/ (centenas de .so + um .zip) por dentro e falha; com ela, trata a pasta como um\n    # pacote já assinado e só confere o selo. Ordem: binários de _internal primeiro (exceto o\n    # Python.framework, que é assinado como framework à parte), depois a pasta .bundle inteira.\n    if [ -d \"$APP/Contents/Helpers/yt-dlp.bundle\" ] && [ -n \"$HELPERS_ENT\" ]; then\n      find \"$APP/Contents/Helpers/yt-dlp.bundle/_internal\" -type f -perm -111 -print0 | while IFS= read -r -d '' f; do\n        case \"$f\" in\n          */Python.framework/*) ;;\n          *)\n            case \"$(/usr/bin/file -b \"$f\")\" in\n              Mach-O*)\n                /usr/bin/codesign --force --options runtime --entitlements \"$HELPERS_ENT\" --sign \"${EXPANDED_CODE_SIGN_IDENTITY}\" \"$f\" >/dev/null 2>&1 || true\n                ;;\n            esac\n            ;;\n        esac\n      done\n      if [ -d \"$APP/Contents/Helpers/yt-dlp.bundle/_internal/Python.framework\" ]; then\n        /usr/bin/codesign --force --options runtime --entitlements \"$HELPERS_ENT\" --sign \"${EXPANDED_CODE_SIGN_IDENTITY}\" \"$APP/Contents/Helpers/yt-dlp.bundle/_internal/Python.framework\" >/dev/null 2>&1 || true\n      fi\n      /usr/bin/codesign --force --options runtime --entitlements \"$HELPERS_ENT\" --sign \"${EXPANDED_CODE_SIGN_IDENTITY}\" \"$APP/Contents/Helpers/yt-dlp.bundle\" >/dev/null 2>&1 || true\n    fi\n    if [ -x \"$APP/Contents/Helpers/deno\" ] && [ -n \"$HELPERS_ENT\" ]; then\n      /usr/bin/codesign --force --options runtime --entitlements \"$HELPERS_ENT\" --sign \"${EXPANDED_CODE_SIGN_IDENTITY}\" \"$APP/Contents/Helpers/deno\" >/dev/null 2>&1 || true\n    fi\n    for b in ffmpeg ffprobe; do\n      if [ -x \"$APP/Contents/Helpers/$b\" ]; then\n        /usr/bin/codesign --force --options runtime --sign \"${EXPANDED_CODE_SIGN_IDENTITY}\" \"$APP/Contents/Helpers/$b\" >/dev/null 2>&1 || true\n      fi\n    done\n  fi\nfi\n\necho \"Helpers embutidos em: $APP/Contents/Helpers\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2DC1F79BE521854D4868C601 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0D58475D5071B4862A08E98 /* AppSettings.swift in Sources */,
+				C0D01888F9D52D54A0B2F0D1 /* AppUpdater.swift in Sources */,
+				9D847CE800AD78935C014AC9 /* AppVersion.swift in Sources */,
+				C01C7B761D7398BB2726D3A0 /* BinaryLocator.swift in Sources */,
+				05935F90AEA34A77EA006E30 /* BrowserCookies.swift in Sources */,
+				866D8AC7D0F5E4917C218977 /* ComposerView.swift in Sources */,
+				B8AD6B5AF1F5BB51240A4760 /* DiagnosticLog.swift in Sources */,
+				5781DD69BA40B7DA93C7D2C9 /* DownloadJob.swift in Sources */,
+				8629B9D0DA4B8E474FB03BB3 /* GrabbApp.swift in Sources */,
+				80C701AE15E631FEB3353664 /* HeaderBarView.swift in Sources */,
+				043EEDB150776FFBE1A22811 /* HistoryEntry.swift in Sources */,
+				C7FE854131130C7CD634950C /* HistoryStore.swift in Sources */,
+				A761A97E9DF2291077EF192F /* HistoryView.swift in Sources */,
+				DCA08695A3F0C6094556F92F /* JobRowView.swift in Sources */,
+				D863ACED95F6A433A2FE5BCE /* LegacyDataMigration.swift in Sources */,
+				B1B6CBE1293D171FC93BB236 /* LibraryModel.swift in Sources */,
+				E9AEC1ACCCE0441956029B55 /* LogoMark.swift in Sources */,
+				31D9245FEAC1F7E592E22738 /* MediaPlatform.swift in Sources */,
+				C8E0BD0EFE9EBA025D7ED4F1 /* RequestCard.swift in Sources */,
+				5581BD07F3829524715EF89C /* RootView.swift in Sources */,
+				076B089CFD8B45EF8A60238E /* SettingsView.swift in Sources */,
+				89BDD88B88DB827E16C08B0C /* TutorialView.swift in Sources */,
+				13CB4ED5EAAF90B45A877AC7 /* Upscaler.swift in Sources */,
+				9E0E421151E5A3A253351CF9 /* VideoInfo.swift in Sources */,
+				C957CD2F9AAD08DA3C8A9FF3 /* VideoQuality.swift in Sources */,
+				1871944CB154F5FCD8280C30 /* YTDLPClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1AFDE1A861E308D0DE967C09 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 21;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = FDWHNL3X82;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		2C6291E47B21F67E3E4C9107 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 21;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = FDWHNL3X82;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		39B9E5DCD2852F40C47F861D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Grabb/Grabb.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Grabb-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Grabb;
+				INFOPLIST_KEY_CFBundleName = Grabb;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSMinimumSystemVersion = 15.0;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Grabb uses Safari only when you turn on browser cookies, to download videos from your account.";
+				INFOPLIST_KEY_NSHighResolutionCapable = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Spinoff";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spinoff.Grabb;
+				PRODUCT_NAME = Grabb;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+			};
+			name = Debug;
+		};
+		D536AAA65F7FDD0A212A227E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Grabb/Grabb.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Grabb-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Grabb;
+				INFOPLIST_KEY_CFBundleName = Grabb;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSMinimumSystemVersion = 15.0;
+				INFOPLIST_KEY_NSAppleEventsUsageDescription = "Grabb uses Safari only when you turn on browser cookies, to download videos from your account.";
+				INFOPLIST_KEY_NSHighResolutionCapable = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "© 2026 Spinoff";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spinoff.Grabb;
+				PRODUCT_NAME = Grabb;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		332F8A130F95D74BE0414DFA /* Build configuration list for PBXNativeTarget "Grabb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				39B9E5DCD2852F40C47F861D /* Debug */,
+				D536AAA65F7FDD0A212A227E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E5A7EC20527F484ADA477630 /* Build configuration list for PBXProject "Grabb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C6291E47B21F67E3E4C9107 /* Debug */,
+				1AFDE1A861E308D0DE967C09 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3D757B930E865597D728DF51 /* XCRemoteSwiftPackageReference "Sparkle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sparkle-project/Sparkle";
+			requirement = {
+				kind = exactVersion;
+				version = 2.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8A904D44C59966329BBC79C0 /* Sparkle */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D757B930E865597D728DF51 /* XCRemoteSwiftPackageReference "Sparkle" */;
+			productName = Sparkle;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 9DA5D4B106D75432C4EDD9F5 /* Project object */;
+}

@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum DLALLTheme {
+enum GrabbTheme {
     static let base = Color(red: 0.03, green: 0.03, blue: 0.05)
     static let indigo = Color(red: 0.17, green: 0.13, blue: 0.48)
     static let indigoDeep = Color(red: 0.10, green: 0.08, blue: 0.30)
@@ -115,7 +115,7 @@ struct HeaderBarView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             HStack(spacing: 10) {
-                Text("DLALL")
+                Text("Grabb")
                     .font(.system(size: 15, weight: .semibold))
                     .foregroundStyle(.white)
 
@@ -171,8 +171,8 @@ struct HeaderBarView: View {
                 .fill(
                     LinearGradient(
                         stops: [
-                            .init(color: DLALLTheme.indigo, location: 0),
-                            .init(color: DLALLTheme.indigoDeep, location: 0.5),
+                            .init(color: GrabbTheme.indigo, location: 0),
+                            .init(color: GrabbTheme.indigoDeep, location: 0.5),
                             .init(color: Color.black, location: 1),
                         ],
                         startPoint: .top,
@@ -194,5 +194,5 @@ struct HeaderBarView: View {
         .environment(LibraryModel(settings: settings))
         .padding(8)
         .frame(width: 760, height: 200)
-        .background(DLALLTheme.base)
+        .background(GrabbTheme.base)
 }

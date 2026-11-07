@@ -3,11 +3,11 @@ from datetime import datetime, timezone
 from yt_dlp.extractor.common import InfoExtractor
 
 
-class DLALLSessionIE(InfoExtractor):
+class GrabbSessionIE(InfoExtractor):
     """Local cookie inspection only; no Instagram URLs or network methods."""
 
-    _VALID_URL = r'dlall:instagram-session$'
-    IE_NAME = 'dlall:session'
+    _VALID_URL = r'grabb:instagram-session$'
+    IE_NAME = 'grabb:session'
 
     def _real_extract(self, url):
         sessions = [

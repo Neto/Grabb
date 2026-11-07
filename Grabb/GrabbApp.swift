@@ -1,18 +1,19 @@
 import SwiftUI
 
 @main
-struct DLALLApp: App {
+struct GrabbApp: App {
     @State private var settings: AppSettings
     @State private var model: LibraryModel
     @StateObject private var updater = AppUpdater()
 
     init() {
+        LegacyDataMigration.runIfNeeded()
         let settings = AppSettings()
         _settings = State(initialValue: settings)
         _model = State(initialValue: LibraryModel(settings: settings))
 
         #if DEBUG
-        // Test hook: DLALL --upscale-test <file> <short side>. Writes the result to /tmp/upscale_test.log.
+        // Test hook: Grabb --upscale-test <file> <short side>. Writes the result to /tmp/upscale_test.log.
         let args = CommandLine.arguments
         if let index = args.firstIndex(of: "--upscale-test"), args.count > index + 2 {
             let path = args[index + 1]
@@ -44,7 +45,7 @@ struct DLALLApp: App {
         .windowResizability(.contentMinSize)
         .commands {
             CommandGroup(replacing: .appInfo) {
-                Button("About DLALL") {
+                Button("About Grabb") {
                     AppVersion.showAboutPanel()
                 }
                 CheckForUpdatesButton(updater: updater)

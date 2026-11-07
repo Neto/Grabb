@@ -4,7 +4,7 @@ import Foundation
 struct CookieSettingsTests {
     @MainActor
     static func main() {
-        let suite = "DLALL.CookieSettingsTests." + UUID().uuidString
+        let suite = "Grabb.CookieSettingsTests." + UUID().uuidString
         let defaults = UserDefaults(suiteName: suite)!
         defer { defaults.removePersistentDomain(forName: suite) }
 

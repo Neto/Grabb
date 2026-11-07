@@ -85,7 +85,7 @@ fi
 if ! gh repo view "$UPDATES_REPO" >/dev/null 2>&1; then
   print "▸ Creating the public repo $UPDATES_REPO"
   gh repo create "$UPDATES_REPO" --public --add-readme \
-    --description "Sparkle update feeds for Spin and DLALL"
+    --description "Sparkle update feeds for Spin and Grabb"
 fi
 
 print "▸ Uploading $ZIP_NAME to release $TAG"

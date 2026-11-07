@@ -83,10 +83,10 @@ final class LibraryModel {
                     banner = nil
                 }
             } else {
-                engineStatus = .missing("The video converter is missing from this app. Reinstall DLALL.")
+                engineStatus = .missing("The video converter is missing from this app. Reinstall Grabb.")
             }
         } else {
-            engineStatus = .missing("The download components are missing from this app. Reinstall DLALL.")
+            engineStatus = .missing("The download components are missing from this app. Reinstall Grabb.")
         }
     }
 

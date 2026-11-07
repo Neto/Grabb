@@ -51,15 +51,15 @@ struct TutorialView: View {
 
     private let steps: [(title: String, text: String)] = [
         ("Paste a link",
-         "Click Paste, or type a link in the field. DLALL works with YouTube, Instagram, TikTok, and Vimeo."),
+         "Click Paste, or type a link in the field. Grabb works with YouTube, Instagram, TikTok, and Vimeo."),
         ("Choose the quality",
          "Pick a resolution. Choose Audio only to save an MP3. The options depend on the video."),
         ("Upscale low resolution videos",
-         "For a low resolution video, the Quality menu adds an Upscale section. Choose Upscale to 1080p for a bigger picture. DLALL uses Apple ML on macOS 26 and later."),
+         "For a low resolution video, the Quality menu adds an Upscale section. Choose Upscale to 1080p for a bigger picture. Grabb uses Apple ML on macOS 26 and later."),
         ("Click Download",
-         "DLALL downloads the video and converts it for QuickTime. The progress shows in the list."),
+         "Grabb downloads the video and converts it for QuickTime. The progress shows in the list."),
         ("Find it again in History",
-         "DLALL saves each finished download in History. Click Download Again to repeat it."),
+         "Grabb saves each finished download in History. Click Download Again to repeat it."),
         ("Set your preferences",
          "Open Preferences to choose the destination folder and a browser for sign in. Some videos and Stories need browser cookies."),
         ("You are ready",
@@ -68,7 +68,7 @@ struct TutorialView: View {
 
     var body: some View {
         VStack(spacing: 16) {
-            Text("Welcome to DLALL")
+            Text("Welcome to Grabb")
                 .font(.title2.bold())
 
             VStack(spacing: 6) {
@@ -99,7 +99,7 @@ struct TutorialView: View {
                         .buttonStyle(TutorialSecondaryButton())
                 }
                 if step == steps.count - 1 {
-                    Button("Start Using DLALL") { dismiss() }
+                    Button("Start Using Grabb") { dismiss() }
                         .keyboardShortcut(.defaultAction)
                         .buttonStyle(TutorialPrimaryButton())
                 } else {
@@ -114,8 +114,8 @@ struct TutorialView: View {
         .background {
             LinearGradient(
                 stops: [
-                    .init(color: DLALLTheme.indigo, location: 0),
-                    .init(color: DLALLTheme.indigoDeep, location: 0.35),
+                    .init(color: GrabbTheme.indigo, location: 0),
+                    .init(color: GrabbTheme.indigoDeep, location: 0.35),
                     .init(color: Color(red: 0.03, green: 0.03, blue: 0.06), location: 1),
                 ],
                 startPoint: .top,
@@ -166,13 +166,13 @@ struct TutorialView: View {
         }
         .frame(width: 680, height: 340)
         .coordinateSpace(name: "mock")
-        .background(DLALLTheme.base)
+        .background(GrabbTheme.base)
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(.white.opacity(0.28), lineWidth: 1))
         .shadow(color: .black.opacity(0.35), radius: 18, y: 6)
         .onPreferenceChange(TutorialFrames.self) { frames = $0 }
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("Animated example of the DLALL window")
+        .accessibilityLabel("Animated example of the Grabb window")
     }
 
     private func scale(_ id: String) -> CGFloat {
@@ -185,7 +185,7 @@ struct TutorialView: View {
                 ForEach(0..<3, id: \.self) { _ in
                     Circle().fill(.white.opacity(0.4)).frame(width: 10, height: 10)
                 }
-                Text("DLALL")
+                Text("Grabb")
                     .font(.system(size: 13, weight: .semibold))
                     .padding(.leading, 14)
                     .padding(.top, 8)
@@ -235,7 +235,7 @@ struct TutorialView: View {
                     .foregroundStyle(url.isEmpty ? Color.white.opacity(0.4) : Color.white)
                     .padding(.horizontal, 14)
                     .frame(height: 30)
-                    .mockGlass(Capsule(), tint: url.isEmpty ? nil : DLALLTheme.indigo)
+                    .mockGlass(Capsule(), tint: url.isEmpty ? nil : GrabbTheme.indigo)
                     .scaleEffect(scale("download"))
                     .tutorialAnchor("download")
             }
@@ -255,7 +255,7 @@ struct TutorialView: View {
         .background(
             UnevenRoundedRectangle(bottomLeadingRadius: 22, bottomTrailingRadius: 22, style: .continuous)
                 .fill(LinearGradient(
-                    colors: [DLALLTheme.indigo, DLALLTheme.indigoDeep, .black],
+                    colors: [GrabbTheme.indigo, GrabbTheme.indigoDeep, .black],
                     startPoint: .top,
                     endPoint: .bottom
                 ))
@@ -272,7 +272,7 @@ struct TutorialView: View {
                         .font(.caption.weight(.semibold))
                         .padding(.horizontal, 10)
                         .frame(height: 24)
-                        .background(Capsule().fill(DLALLTheme.indigo))
+                        .background(Capsule().fill(GrabbTheme.indigo))
                         .scaleEffect(scale("redownload"))
                         .tutorialAnchor("redownload")
                 )
@@ -624,10 +624,10 @@ private struct TutorialPrimaryButton: ButtonStyle {
             .foregroundStyle(.white)
             .padding(.horizontal, 22)
             .frame(height: 36)
-            .background(Capsule().fill(DLALLTheme.indigo.opacity(0.85)))
+            .background(Capsule().fill(GrabbTheme.indigo.opacity(0.85)))
             .overlay(Capsule().fill(LinearGradient(colors: [.white.opacity(0.3), .clear], startPoint: .top, endPoint: .center)))
             .overlay(Capsule().strokeBorder(.white.opacity(0.7), lineWidth: 1))
-            .shadow(color: DLALLTheme.indigo.opacity(0.6), radius: 10, y: 2)
+            .shadow(color: GrabbTheme.indigo.opacity(0.6), radius: 10, y: 2)
             .opacity(configuration.isPressed ? 0.8 : 1)
             .contentShape(Capsule())
     }

@@ -58,7 +58,7 @@ struct RootView: View {
                 .allowsHitTesting(false)
             }
             .ignoresSafeArea(.container, edges: .top)
-            .navigationTitle("DLALL")
+            .navigationTitle("Grabb")
             .toolbar(removing: .title)
             .toolbarBackgroundVisibility(.hidden, for: .windowToolbar)
             .onDrop(of: [.url, .plainText], isTargeted: nil, perform: handleDrop)
@@ -67,7 +67,7 @@ struct RootView: View {
             }
             .onAppear { model.quality = settings.defaultQuality }
             .frame(minWidth: 640, minHeight: 460)
-            .containerBackground(for: .window) { DLALLTheme.base }
+            .containerBackground(for: .window) { GrabbTheme.base }
             .preferredColorScheme(.dark)
         }
     }

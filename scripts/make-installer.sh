@@ -1,14 +1,15 @@
 #!/bin/zsh
-# Gera DLALL.pkg assinado e notarizado (abre com duplo clique em qualquer Mac Apple Silicon).
+# Gera Grabb.pkg assinado e notarizado (abre com duplo clique em qualquer Mac Apple Silicon).
 # Pré-requisitos (uma vez):
 #   1) Certificado "Developer ID Installer: Mentor Neto (FDWHNL3X82)" no Keychain
-#   2) xcrun notarytool store-credentials "DLALL" --apple-id <email> --team-id FDWHNL3X82 --password <senha de app>
+#   2) xcrun notarytool store-credentials "$NOTARY_PROFILE" --apple-id <email> --team-id FDWHNL3X82 --password <senha de app>
 set -euo pipefail
 
 TEAM="FDWHNL3X82"
 APP_ID="Developer ID Application: Mentor Neto (${TEAM})"
 PKG_ID="Developer ID Installer: Mentor Neto (${TEAM})"
-NOTARY_PROFILE="DLALL"
+# Keychain profile created before the rename, still named DLALL.
+NOTARY_PROFILE="${NOTARY_PROFILE:-DLALL}"
 
 if [[ -d /Applications/Xcode-beta.app/Contents/Developer ]]; then
   export DEVELOPER_DIR=/Applications/Xcode-beta.app/Contents/Developer
@@ -16,7 +17,7 @@ elif [[ -d /Applications/Xcode.app/Contents/Developer ]]; then
   export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
 fi
 
-PROJ="${HOME}/ARDUINO/XCODE/DLALL"
+PROJ="${HOME}/ARDUINO/XCODE/Grabb"
 cd "$PROJ"
 
 # --- Pré-checagens (falha cedo, antes de compilar) ---
@@ -37,7 +38,7 @@ if command -v xcodegen >/dev/null 2>&1; then
   xcodegen generate
 fi
 
-xcodebuild -project DLALL.xcodeproj -scheme DLALL -configuration Release \
+xcodebuild -project Grabb.xcodeproj -scheme Grabb -configuration Release \
   -destination 'platform=macOS,arch=arm64' \
   CODE_SIGN_IDENTITY="$APP_ID" \
   CODE_SIGN_STYLE=Manual \
@@ -45,11 +46,11 @@ xcodebuild -project DLALL.xcodeproj -scheme DLALL -configuration Release \
   build
 
 APP="$(/usr/bin/find "${HOME}/Library/Developer/Xcode/DerivedData" \
-  -path '*/Build/Products/Release/DLALL.app' -type d -print0 2>/dev/null \
+  -path '*/Build/Products/Release/Grabb.app' -type d -print0 2>/dev/null \
   | xargs -0 ls -dt 2>/dev/null | /usr/bin/head -1)"
 
 if [[ ! -d "$APP" ]]; then
-  print -u2 "Release DLALL.app não encontrado."
+  print -u2 "Release Grabb.app não encontrado."
   exit 1
 fi
 
@@ -106,7 +107,7 @@ codesign --force --options runtime --timestamp --sign "$APP_ID" "$SPARKLE/Versio
 codesign --force --options runtime --timestamp --sign "$APP_ID" "$SPARKLE"
 # app por último
 codesign --force --options runtime --timestamp \
-  --entitlements "$PROJ/DLALL/DLALL.entitlements" \
+  --entitlements "$PROJ/Grabb/Grabb.entitlements" \
   --sign "$APP_ID" "$APP"
 
 codesign --verify --deep --strict --verbose=2 "$APP"
@@ -119,42 +120,42 @@ codesign --verify --deep --strict --verbose=2 "$APP"
 
 "$PROJ/scripts/install-to-applications.sh" "$APP"
 
-STAGE="/tmp/dlall-pkgroot"
+STAGE="/tmp/grabb-pkgroot"
 rm -rf "$STAGE"
 mkdir -p "$STAGE"
-ditto "$APP" "$STAGE/DLALL.app"
+ditto "$APP" "$STAGE/Grabb.app"
 
-PKG_DIR="/tmp/dlall-pkg"
+PKG_DIR="/tmp/grabb-pkg"
 rm -rf "$PKG_DIR"
 mkdir -p "$PKG_DIR"
 
 MARKETING="$(defaults read "$APP/Contents/Info" CFBundleShortVersionString)"
 BUILD="$(defaults read "$APP/Contents/Info" CFBundleVersion)"
 
-pkgbuild --identifier com.spinoff.DLALL \
+pkgbuild --identifier com.spinoff.Grabb \
   --version "$MARKETING" \
   --install-location /Applications \
-  --component "$STAGE/DLALL.app" \
-  "$PKG_DIR/DLALL-component.pkg"
+  --component "$STAGE/Grabb.app" \
+  "$PKG_DIR/Grabb-component.pkg"
 
 cat > "$PKG_DIR/distribution.xml" << EOF
 <?xml version="1.0" encoding="utf-8"?>
 <installer-gui-script minSpecVersion="2">
-    <title>DLALL</title>
+    <title>Grabb</title>
     <organization>com.spinoff</organization>
     <options customize="never" require-scripts="false" hostArchitectures="arm64"/>
     <welcome file="welcome.html" mime-type="text/html"/>
-    <pkg-ref id="com.spinoff.DLALL"/>
+    <pkg-ref id="com.spinoff.Grabb"/>
     <choices-outline>
         <line choice="default">
-            <line choice="com.spinoff.DLALL"/>
+            <line choice="com.spinoff.Grabb"/>
         </line>
     </choices-outline>
     <choice id="default"/>
-    <choice id="com.spinoff.DLALL" visible="false">
-        <pkg-ref id="com.spinoff.DLALL"/>
+    <choice id="com.spinoff.Grabb" visible="false">
+        <pkg-ref id="com.spinoff.Grabb"/>
     </choice>
-    <pkg-ref id="com.spinoff.DLALL" version="$MARKETING" onConclusion="none">DLALL-component.pkg</pkg-ref>
+    <pkg-ref id="com.spinoff.Grabb" version="$MARKETING" onConclusion="none">Grabb-component.pkg</pkg-ref>
 </installer-gui-script>
 EOF
 
@@ -162,8 +163,8 @@ cp "$PROJ/scripts/installer/welcome.html" "$PKG_DIR/welcome.html"
 
 ARCHIVE_DIR="${PROJ}/dist"
 mkdir -p "$ARCHIVE_DIR"
-ARCHIVED_PKG="${ARCHIVE_DIR}/DLALL-${MARKETING}-${BUILD}.pkg"
-OUT_PKG="${HOME}/Desktop/DLALL.pkg"
+ARCHIVED_PKG="${ARCHIVE_DIR}/Grabb-${MARKETING}-${BUILD}.pkg"
+OUT_PKG="${HOME}/Desktop/Grabb.pkg"
 
 productbuild --distribution "$PKG_DIR/distribution.xml" \
   --package-path "$PKG_DIR" \
@@ -191,7 +192,7 @@ pkgutil --check-signature "$OUT_PKG"
 /bin/cp -f "$OUT_PKG" "$ARCHIVED_PKG"
 
 # --- Atualização Sparkle (zip assinado + appcast). Publica só com PUBLISH_UPDATE=1. ---
-"$PROJ/scripts/publish-update.sh" "$APP" dlall
+"$PROJ/scripts/publish-update.sh" "$APP" grabb
 
 print "Instalador (Mesa): $OUT_PKG"
 print "Arquivo: $ARCHIVED_PKG"

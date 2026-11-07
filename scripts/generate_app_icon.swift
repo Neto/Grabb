@@ -4,7 +4,7 @@ import AppKit
 let root = URL(fileURLWithPath: #filePath).deletingLastPathComponent().deletingLastPathComponent()
 // Made by Design/MakeIcon.swift (neon style shared with Spin).
 let source = root.appendingPathComponent("Design/AppIconSource.png")
-let outDir = root.appendingPathComponent("DLALL/Assets.xcassets/AppIcon.appiconset")
+let outDir = root.appendingPathComponent("Grabb/Assets.xcassets/AppIcon.appiconset")
 try FileManager.default.createDirectory(at: outDir, withIntermediateDirectories: true)
 
 guard let sourceImage = NSImage(contentsOf: source), sourceImage.isValid else {

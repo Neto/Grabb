@@ -1,4 +1,4 @@
-# DLALL
+# Grabb
 
 A macOS app that downloads videos, audio, and Instagram content from links. It has a native SwiftUI interface.
 
@@ -8,7 +8,7 @@ Download only content that you have permission to save.
 
 - Downloads from YouTube, Instagram, TikTok, Vimeo, and other sites that yt-dlp supports. Availability depends on the site and the content.
 - Quality selector for each video, up to 4K when available. MP3 audio extraction.
-- H.264 and AAC output that plays in QuickTime. DLALL converts the file when necessary.
+- H.264 and AAC output that plays in QuickTime. Grabb converts the file when necessary.
 - Instagram photos and carousels. Experimental support for Stories and highlights.
 - Download queue, History tab with Download Again, and a destination folder setting.
 - Separate browser cookie settings for videos and for Instagram Stories.
@@ -30,16 +30,16 @@ Files go to the Downloads folder by default. Change the folder in Preferences.
 
 ## Browser cookies
 
-Some content needs a login. DLALL uses yt-dlp to read cookies from the browser that you select. You do not enter a password in DLALL. Cookies can contain session data, so select a browser only when you need it.
+Some content needs a login. Grabb uses yt-dlp to read cookies from the browser that you select. You do not enter a password in Grabb. Cookies can contain session data, so select a browser only when you need it.
 
 - **Cookies for videos** applies to YouTube, Reels, Instagram posts, and other links. The options are None (default), Automatic, or a specific browser.
 - **Cookies for Instagram Stories** applies to Stories and highlights. Select a browser where you are signed in to Instagram.
 
-To read Safari cookies, DLALL needs Full Disk Access in System Settings > Privacy & Security. This permission gives broad access, so grant it only if you trust your copy of the app.
+To read Safari cookies, Grabb needs Full Disk Access in System Settings > Privacy & Security. This permission gives broad access, so grant it only if you trust your copy of the app.
 
 ## Diagnostics
 
-In Preferences > Engine, turn on detailed diagnostics to record tool versions and errors. Logs are in `~/Library/Logs/DLALL/`. DLALL removes cookie, token, and credential values from the logs. Check the logs for local paths before you share them.
+In Preferences > Engine, turn on detailed diagnostics to record tool versions and errors. Logs are in `~/Library/Logs/Grabb/`. Grabb removes cookie, token, and credential values from the logs. Check the logs for local paths before you share them.
 
 ## Build from source
 
@@ -52,11 +52,11 @@ brew install xcodegen ffmpeg deno dylibbundler python@3.11
 Build the app:
 
 ```
-git clone https://github.com/Neto/DLALL.git
-cd DLALL
+git clone https://github.com/Neto/Grabb.git
+cd Grabb
 ./scripts/bundle-helpers.sh
 xcodegen generate
-xcodebuild -project DLALL.xcodeproj -scheme DLALL -configuration Debug \
+xcodebuild -project Grabb.xcodeproj -scheme Grabb -configuration Debug \
   -destination 'platform=macOS,arch=arm64' build
 ```
 
@@ -69,7 +69,7 @@ xcodebuild -project DLALL.xcodeproj -scheme DLALL -configuration Debug \
 - Original project (DLYT): Mentor Neto, Spinoff.
 - Features added in the BaixaTudo version: Ricardo Cavallini. These are the quality selector, Instagram photos and Stories, separate cookie settings, the diagnostics, and the yt-dlp packaging changes. Git history keeps his authorship.
 - Tools: yt-dlp, FFmpeg, and Deno, under their own licenses.
-- The experimental Stories fix is adapted from yt-dlp PR 17885. See `DLALL/Resources/Diagnostics/STORIES-FIX.md`.
+- The experimental Stories fix is adapted from yt-dlp PR 17885. See `Grabb/Resources/Diagnostics/STORIES-FIX.md`.
 
 ## License
 

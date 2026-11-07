@@ -1,5 +1,5 @@
 #!/bin/zsh
-# Compila o DLALL. Não instala em /Applications; arraste o .app manualmente.
+# Compila o Grabb. Não instala em /Applications; arraste o .app manualmente.
 set -euo pipefail
 
 if [[ -d /Applications/Xcode-beta.app/Contents/Developer ]]; then
@@ -17,11 +17,11 @@ if command -v xcodegen >/dev/null 2>&1; then
   xcodegen generate
 fi
 
-xcodebuild -project DLALL.xcodeproj -scheme DLALL -configuration Debug \
+xcodebuild -project Grabb.xcodeproj -scheme Grabb -configuration Debug \
   -destination 'platform=macOS,arch=arm64' build
 
 APP="$(/usr/bin/find "${HOME}/Library/Developer/Xcode/DerivedData" \
-  -path '*/Build/Products/Debug/DLALL.app' -type d 2>/dev/null \
+  -path '*/Build/Products/Debug/Grabb.app' -type d 2>/dev/null \
   | /usr/bin/head -1)"
 
 open -R "$APP"

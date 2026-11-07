@@ -117,7 +117,7 @@ struct SettingsView: View {
                     .onChange(of: settings.customYTDLPPath) {
                         model.refreshEngine()
                     }
-                Text("If empty, DLALL uses the tools inside the app.")
+                Text("If empty, Grabb uses the tools inside the app.")
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -173,7 +173,7 @@ struct SettingsView: View {
             }
 
             Section("Version") {
-                LabeledContent("DLALL") {
+                LabeledContent("Grabb") {
                     Text(AppVersion.full)
                         .textSelection(.enabled)
                 }

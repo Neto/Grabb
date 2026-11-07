@@ -1,4 +1,4 @@
-name: DLALL
+name: Grabb
 options:
   bundleIdPrefix: com.spinoff
   deploymentTarget:
@@ -6,8 +6,8 @@ options:
   createIntermediateGroups: true
   developmentLanguage: en
 settings:
-  MARKETING_VERSION: "1.8.3"
-  CURRENT_PROJECT_VERSION: "20"
+  MARKETING_VERSION: "1.9.0"
+  CURRENT_PROJECT_VERSION: "21"
   DEVELOPMENT_TEAM: FDWHNL3X82
   CODE_SIGN_STYLE: Automatic
   SWIFT_VERSION: "6.0"
@@ -17,34 +17,34 @@ packages:
     url: https://github.com/sparkle-project/Sparkle
     exactVersion: 2.10.0
 targets:
-  DLALL:
+  Grabb:
     type: application
     platform: macOS
     dependencies:
       - package: Sparkle
     sources:
-      - path: DLALL
+      - path: Grabb
         excludes:
           - "**/.DS_Store"
           - "Resources/Diagnostics/**"
-      - path: DLALL/Resources/Diagnostics
+      - path: Grabb/Resources/Diagnostics
         type: folder
         buildPhase: resources
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.spinoff.DLALL
-        PRODUCT_NAME: DLALL
+        PRODUCT_BUNDLE_IDENTIFIER: com.spinoff.Grabb
+        PRODUCT_NAME: Grabb
         GENERATE_INFOPLIST_FILE: YES
         # Sparkle keys (update feed and public signing key). Merged with the generated keys.
-        INFOPLIST_FILE: DLALL-Info.plist
-        INFOPLIST_KEY_CFBundleDisplayName: DLALL
-        INFOPLIST_KEY_CFBundleName: DLALL
+        INFOPLIST_FILE: Grabb-Info.plist
+        INFOPLIST_KEY_CFBundleDisplayName: Grabb
+        INFOPLIST_KEY_CFBundleName: Grabb
         INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
         INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 Spinoff"
         INFOPLIST_KEY_NSHighResolutionCapable: YES
         INFOPLIST_KEY_LSMinimumSystemVersion: "15.0"
-        INFOPLIST_KEY_NSAppleEventsUsageDescription: "DLALL uses Safari only when you turn on browser cookies, to download videos from your account."
-        CODE_SIGN_ENTITLEMENTS: DLALL/DLALL.entitlements
+        INFOPLIST_KEY_NSAppleEventsUsageDescription: "Grabb uses Safari only when you turn on browser cookies, to download videos from your account."
+        CODE_SIGN_ENTITLEMENTS: Grabb/Grabb.entitlements
         ENABLE_HARDENED_RUNTIME: YES
         ENABLE_PREVIEWS: YES
         COMBINE_HIDPI_IMAGES: YES
