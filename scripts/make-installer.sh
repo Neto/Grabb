@@ -3,8 +3,13 @@
 # Pré-requisitos (uma vez):
 #   1) Certificado "Developer ID Installer: Mentor Neto (FDWHNL3X82)" no Keychain
 #   2) xcrun notarytool store-credentials "$NOTARY_PROFILE" --apple-id <email> --team-id FDWHNL3X82 --password <senha de app>
+#
+# Every release also builds the owner installer: ~/Desktop/Grabb-<version>-Owner.pkg, a notarized
+# installer that never asks for a license key, for the developer's own Macs. It is never
+# published. OWNER=1 builds only that one; SKIP_OWNER=1 leaves it out.
 set -euo pipefail
 
+OWNER="${OWNER:-0}"
 TEAM="FDWHNL3X82"
 APP_ID="Developer ID Application: Mentor Neto (${TEAM})"
 PKG_ID="Developer ID Installer: Mentor Neto (${TEAM})"
@@ -38,16 +43,30 @@ if command -v xcodegen >/dev/null 2>&1; then
   xcodegen generate
 fi
 
-xcodebuild -project Grabb.xcodeproj -scheme Grabb -configuration Release \
-  -destination 'platform=macOS,arch=arm64' \
-  CODE_SIGN_IDENTITY="$APP_ID" \
-  CODE_SIGN_STYLE=Manual \
-  DEVELOPMENT_TEAM="$TEAM" \
-  build
+if [[ "$OWNER" == "1" ]]; then
+  print "▸ Owner build (no license check, never published)"
+  rm -rf "$PROJ/build/owner"
+  xcodebuild -project Grabb.xcodeproj -scheme Grabb -configuration Release \
+    -destination 'platform=macOS,arch=arm64' \
+    -derivedDataPath "$PROJ/build/owner" \
+    CODE_SIGN_IDENTITY="$APP_ID" \
+    CODE_SIGN_STYLE=Manual \
+    DEVELOPMENT_TEAM="$TEAM" \
+    'OTHER_SWIFT_FLAGS=$(inherited) -DOWNER' \
+    build
+  APP="$PROJ/build/owner/Build/Products/Release/Grabb.app"
+else
+  xcodebuild -project Grabb.xcodeproj -scheme Grabb -configuration Release \
+    -destination 'platform=macOS,arch=arm64' \
+    CODE_SIGN_IDENTITY="$APP_ID" \
+    CODE_SIGN_STYLE=Manual \
+    DEVELOPMENT_TEAM="$TEAM" \
+    build
 
-APP="$(/usr/bin/find "${HOME}/Library/Developer/Xcode/DerivedData" \
-  -path '*/Build/Products/Release/Grabb.app' -type d -print0 2>/dev/null \
-  | xargs -0 ls -dt 2>/dev/null | /usr/bin/head -1)"
+  APP="$(/usr/bin/find "${HOME}/Library/Developer/Xcode/DerivedData" \
+    -path '*/Build/Products/Release/Grabb.app' -type d -print0 2>/dev/null \
+    | xargs -0 ls -dt 2>/dev/null | /usr/bin/head -1)"
+fi
 
 if [[ ! -d "$APP" ]]; then
   print -u2 "Release Grabb.app não encontrado."
@@ -105,6 +124,11 @@ codesign --force --options runtime --timestamp --preserve-metadata=entitlements 
 codesign --force --options runtime --timestamp --sign "$APP_ID" "$SPARKLE/Versions/B/Autoupdate"
 codesign --force --options runtime --timestamp --sign "$APP_ID" "$SPARKLE/Versions/B/Updater.app"
 codesign --force --options runtime --timestamp --sign "$APP_ID" "$SPARKLE"
+if [[ "$OWNER" == "1" ]]; then
+  # An automatic update would replace the owner copy with the public build, which has the trial.
+  /usr/libexec/PlistBuddy -c "Set :SUEnableAutomaticChecks false" "$APP/Contents/Info.plist" 2>/dev/null \
+    || /usr/libexec/PlistBuddy -c "Add :SUEnableAutomaticChecks bool false" "$APP/Contents/Info.plist"
+fi
 # app por último
 codesign --force --options runtime --timestamp \
   --entitlements "$PROJ/Grabb/Grabb.entitlements" \
@@ -118,7 +142,9 @@ codesign --verify --deep --strict --verbose=2 "$APP"
 "$APP/Contents/Helpers/ffprobe" -version | head -1
 "$APP/Contents/Helpers/deno" --version | head -1
 
-"$PROJ/scripts/install-to-applications.sh" "$APP"
+if [[ "$OWNER" != "1" ]]; then
+  "$PROJ/scripts/install-to-applications.sh" "$APP"
+fi
 
 STAGE="/tmp/grabb-pkgroot"
 rm -rf "$STAGE"
@@ -164,7 +190,12 @@ cp "$PROJ/scripts/installer/welcome.html" "$PKG_DIR/welcome.html"
 ARCHIVE_DIR="${PROJ}/dist"
 mkdir -p "$ARCHIVE_DIR"
 ARCHIVED_PKG="${ARCHIVE_DIR}/Grabb-${MARKETING}-${BUILD}.pkg"
-OUT_PKG="${HOME}/Desktop/Grabb.pkg"
+if [[ "$OWNER" == "1" ]]; then
+  OUT_PKG="${HOME}/Desktop/Grabb-${MARKETING}-Owner.pkg"
+else
+  OUT_PKG="${HOME}/Desktop/Grabb.pkg"
+fi
+rm -f "$OUT_PKG"
 
 productbuild --distribution "$PKG_DIR/distribution.xml" \
   --package-path "$PKG_DIR" \
@@ -192,6 +223,10 @@ pkgutil --check-signature "$OUT_PKG"
 # O que o comprador baixa: o pkg com o ícone do app e uma seta verde, num zip que preserva o
 # ícone no download (o Utilitário de Compressão restaura o ícone ao abrir o zip).
 swift "$PROJ/Design/MakeInstallerIcon.swift" "$PROJ/Design/AppIconSource.png" "$OUT_PKG"
+if [[ "$OWNER" == "1" ]]; then
+  print "Owner installer: $OUT_PKG"
+  exit 0
+fi
 /usr/bin/ditto "$OUT_PKG" "$ARCHIVED_PKG"
 DOWNLOAD_ZIP="${ARCHIVE_DIR}/Grabb-${MARKETING}.zip"
 rm -f "$DOWNLOAD_ZIP"
@@ -205,3 +240,7 @@ print "Instalador (Mesa): $OUT_PKG"
 print "Arquivo: $ARCHIVED_PKG"
 ls -lh "$OUT_PKG" "$ARCHIVED_PKG"
 open -R "$OUT_PKG"
+
+if [[ "${SKIP_OWNER:-0}" != "1" ]]; then
+  OWNER=1 PUBLISH_UPDATE=0 "$PROJ/scripts/make-installer.sh"
+fi
