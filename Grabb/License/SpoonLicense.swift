@@ -73,6 +73,11 @@ final class SpoonLicense {
     }
 
     func refresh() {
+        #if OWNER
+        // Owner build for the developer's own Macs: never asks for a key. Never publish it.
+        state = .licensed(email: "")
+        return
+        #endif
         if let key = Self.keychainRead(service: service, account: keyAccount),
            let email = Self.verify(key: key, product: product) {
             state = .licensed(email: email)
