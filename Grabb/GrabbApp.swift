@@ -5,6 +5,8 @@ struct GrabbApp: App {
     @State private var settings: AppSettings
     @State private var model: LibraryModel
     @StateObject private var updater = AppUpdater()
+    @NSApplicationDelegateAdaptor(GrabbAppDelegate.self) private var appDelegate
+    private var license: SpoonLicense { appDelegate.license }
 
     init() {
         LegacyDataMigration.runIfNeeded()
@@ -36,11 +38,19 @@ struct GrabbApp: App {
             RootView()
                 .environment(settings)
                 .environment(model)
+                .environment(license)
                 .task {
+                    #if DEBUG
+                    if let days = ProcessInfo.processInfo.environment["SPOON_TRIAL_DAYS_USED"].flatMap(Int.init) {
+                        license.debugShiftTrial(days: days)
+                    }
+                    #endif
                     model.presentTutorialIfFirstLaunch()
                     model.refreshEngine()
                 }
-        }
+                .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in
+                    license.refresh()
+                }        }
         .defaultSize(width: 760, height: 600)
         .windowResizability(.contentMinSize)
         .commands {
@@ -56,11 +66,13 @@ struct GrabbApp: App {
                     model.enqueueDraft()
                 }
                 .keyboardShortcut("v", modifiers: [.command, .shift])
+                .disabled(!license.isUnlocked)
 
                 Button("Download URL") {
                     model.enqueueDraft()
                 }
                 .keyboardShortcut(.return, modifiers: .command)
+                .disabled(!license.isUnlocked)
             }
             CommandGroup(replacing: .help) {
                 Button("Show Tutorial") {

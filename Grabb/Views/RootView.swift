@@ -3,14 +3,48 @@ import SwiftUI
 struct RootView: View {
     @Environment(LibraryModel.self) private var model
     @Environment(AppSettings.self) private var settings
+    @Environment(SpoonLicense.self) private var license
+    @State private var showLicense = false
 
     var body: some View {
+        if license.isUnlocked {
+            content
+        } else {
+            LicenseView(license: license, price: "$5")
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(minWidth: 640, minHeight: 460)
+                .containerBackground(for: .window) { GrabbTheme.base }
+                .preferredColorScheme(.dark)
+        }
+    }
+
+    private var trialBar: some View {
+        HStack(spacing: 8) {
+            Image(systemName: "clock")
+                .foregroundStyle(.secondary)
+                .accessibilityHidden(true)
+            Text(license.statusText)
+                .font(.callout)
+            Spacer()
+            Button("Buy Grabb") { showLicense = true }
+                .buttonStyle(.borderless)
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 6)
+        .background(.quaternary.opacity(0.4))
+    }
+
+    private var content: some View {
         @Bindable var model = model
 
-        NavigationStack {
+        return NavigationStack {
             VStack(spacing: 0) {
                 HeaderBarView()
                     .padding(.bottom, 4)
+
+                if case .trial = license.state {
+                    trialBar
+                }
 
                 if let banner = model.banner {
                     bannerBar(banner)
@@ -64,6 +98,14 @@ struct RootView: View {
             .onDrop(of: [.url, .plainText], isTargeted: nil, perform: handleDrop)
             .sheet(isPresented: $model.showTutorial, onDismiss: { model.markTutorialSeen() }) {
                 TutorialView()
+            }
+            .sheet(isPresented: $showLicense) {
+                LicenseView(license: license, price: "$5")
+                    .overlay(alignment: .topTrailing) {
+                        Button("Close") { showLicense = false }
+                            .keyboardShortcut(.cancelAction)
+                            .padding(10)
+                    }
             }
             .onAppear { model.quality = settings.defaultQuality }
             .frame(minWidth: 640, minHeight: 460)
@@ -152,6 +194,7 @@ struct EmptyQueueView: View {
 #Preview {
     let settings = AppSettings()
     RootView()
+        .environment(SpoonLicense(product: "grabb", displayName: "Grabb", buyURL: URL(string: "https://spoon.com.br")!))
         .environment(settings)
         .environment(LibraryModel(settings: settings))
         .frame(width: 760, height: 560)

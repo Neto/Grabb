@@ -2,12 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.mentorneto.Grabb.license</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>grabb</string>
+			</array>
+		</dict>
+	</array>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
 	<key>SUFeedURL</key>
 	<string>https://raw.githubusercontent.com/Neto/mac-app-updates/main/grabb/appcast.xml</string>
 	<key>SUPublicEDKey</key>
 	<string>24rE0d0bh5gUwr4ENU86oYzcRxSEuwOVQfvkXJRDpPQ=</string>
-	<key>SUEnableAutomaticChecks</key>
-	<true/>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
 </dict>

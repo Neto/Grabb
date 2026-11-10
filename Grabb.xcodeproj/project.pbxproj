@@ -22,6 +22,8 @@
 		8629B9D0DA4B8E474FB03BB3 /* GrabbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1C7A6C5B5A80B59146ECCA /* GrabbApp.swift */; };
 		866D8AC7D0F5E4917C218977 /* ComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF082A55F45B9616294C1A5 /* ComposerView.swift */; };
 		89BDD88B88DB827E16C08B0C /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF7B6ABC2EAE0B884A60A0A /* TutorialView.swift */; };
+		90E5A2E1E3E58F26F33D6D62 /* GrabbAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94DCAEFBA7A20A6B2F8E47D2 /* GrabbAppDelegate.swift */; };
+		9A776EDC37B222975A773D7A /* SpoonLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9D84A4119DF3AE3691B050 /* SpoonLicense.swift */; };
 		9D847CE800AD78935C014AC9 /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C15A46A7676E4B70786CDF /* AppVersion.swift */; };
 		9E0E421151E5A3A253351CF9 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECB2E4CD7A5A520F5E37D09 /* VideoInfo.swift */; };
 		A0D58475D5071B4862A08E98 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 800D31677E58351CC7B2B72B /* AppSettings.swift */; };
@@ -38,6 +40,7 @@
 		DCA08695A3F0C6094556F92F /* JobRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59E16AE37A66BD0C446C8D /* JobRowView.swift */; };
 		E03BA71C20454D6706546D3A /* Funk.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 89B3914DC03E62044A3429BF /* Funk.aiff */; };
 		E9AEC1ACCCE0441956029B55 /* LogoMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57060052B3289C738C6FBAB2 /* LogoMark.swift */; };
+		FD834658FC139D66B10C224A /* LicenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C61996FF8511555B210F758 /* LicenseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,11 +58,13 @@
 		5CAA4CC90AD0FF0E8001D9FC /* DiagnosticLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosticLog.swift; sourceTree = "<group>"; };
 		5F0F42821CF7494D9615364D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		6AF4409F9A6CE0674BEF4A79 /* GrabbLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrabbLogo.png; sourceTree = "<group>"; };
+		6C61996FF8511555B210F758 /* LicenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseView.swift; sourceTree = "<group>"; };
 		6E1C7A6C5B5A80B59146ECCA /* GrabbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrabbApp.swift; sourceTree = "<group>"; };
 		7250ADBE87F692C031B81B86 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		800D31677E58351CC7B2B72B /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		89B3914DC03E62044A3429BF /* Funk.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = Funk.aiff; sourceTree = "<group>"; };
 		8EF7B6ABC2EAE0B884A60A0A /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
+		94DCAEFBA7A20A6B2F8E47D2 /* GrabbAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrabbAppDelegate.swift; sourceTree = "<group>"; };
 		AA59E16AE37A66BD0C446C8D /* JobRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRowView.swift; sourceTree = "<group>"; };
 		BD8CB55AE7FB42BB3EF0E974 /* MediaPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaPlatform.swift; sourceTree = "<group>"; };
 		C69F7920F7AEB376494AB23E /* VideoQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoQuality.swift; sourceTree = "<group>"; };
@@ -69,6 +74,7 @@
 		DDF3ECD244BAA2001BF9B1DD /* HistoryEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryEntry.swift; sourceTree = "<group>"; };
 		E1CC33C1CCEABD078DD43395 /* AppUpdater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdater.swift; sourceTree = "<group>"; };
 		E5ADA84570D810D3F8680E0C /* RequestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCard.swift; sourceTree = "<group>"; };
+		EB9D84A4119DF3AE3691B050 /* SpoonLicense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoonLicense.swift; sourceTree = "<group>"; };
 		EECB2E4CD7A5A520F5E37D09 /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
 		F66A7D34D247773500EFF9E8 /* Diagnostics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Diagnostics; path = Grabb/Resources/Diagnostics; sourceTree = SOURCE_ROOT; };
 		F8247A1C34A762BBBBCADFC9 /* Upscaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Upscaler.swift; sourceTree = "<group>"; };
@@ -108,6 +114,16 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		64A08A6D0448D9C892FA0F06 /* License */ = {
+			isa = PBXGroup;
+			children = (
+				94DCAEFBA7A20A6B2F8E47D2 /* GrabbAppDelegate.swift */,
+				6C61996FF8511555B210F758 /* LicenseView.swift */,
+				EB9D84A4119DF3AE3691B050 /* SpoonLicense.swift */,
+			);
+			path = License;
+			sourceTree = "<group>";
+		};
 		8DD14A0A17CDC849C384A67B /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +154,7 @@
 				3E03B2B03F55CA0CA962AC89 /* Grabb.entitlements */,
 				6E1C7A6C5B5A80B59146ECCA /* GrabbApp.swift */,
 				8DD14A0A17CDC849C384A67B /* Configuration */,
+				64A08A6D0448D9C892FA0F06 /* License */,
 				319F6CF41FD4082C061BFA10 /* Models */,
 				CC269E029FBDF02AB5B601E0 /* Resources */,
 				999EAD94238669BA559E53C9 /* Services */,
@@ -300,6 +317,7 @@
 				B8AD6B5AF1F5BB51240A4760 /* DiagnosticLog.swift in Sources */,
 				5781DD69BA40B7DA93C7D2C9 /* DownloadJob.swift in Sources */,
 				8629B9D0DA4B8E474FB03BB3 /* GrabbApp.swift in Sources */,
+				90E5A2E1E3E58F26F33D6D62 /* GrabbAppDelegate.swift in Sources */,
 				80C701AE15E631FEB3353664 /* HeaderBarView.swift in Sources */,
 				043EEDB150776FFBE1A22811 /* HistoryEntry.swift in Sources */,
 				C7FE854131130C7CD634950C /* HistoryStore.swift in Sources */,
@@ -307,11 +325,13 @@
 				DCA08695A3F0C6094556F92F /* JobRowView.swift in Sources */,
 				D863ACED95F6A433A2FE5BCE /* LegacyDataMigration.swift in Sources */,
 				B1B6CBE1293D171FC93BB236 /* LibraryModel.swift in Sources */,
+				FD834658FC139D66B10C224A /* LicenseView.swift in Sources */,
 				E9AEC1ACCCE0441956029B55 /* LogoMark.swift in Sources */,
 				31D9245FEAC1F7E592E22738 /* MediaPlatform.swift in Sources */,
 				C8E0BD0EFE9EBA025D7ED4F1 /* RequestCard.swift in Sources */,
 				5581BD07F3829524715EF89C /* RootView.swift in Sources */,
 				076B089CFD8B45EF8A60238E /* SettingsView.swift in Sources */,
+				9A776EDC37B222975A773D7A /* SpoonLicense.swift in Sources */,
 				89BDD88B88DB827E16C08B0C /* TutorialView.swift in Sources */,
 				13CB4ED5EAAF90B45A877AC7 /* Upscaler.swift in Sources */,
 				9E0E421151E5A3A253351CF9 /* VideoInfo.swift in Sources */,
