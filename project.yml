@@ -6,8 +6,8 @@ options:
   createIntermediateGroups: true
   developmentLanguage: en
 settings:
-  MARKETING_VERSION: "1.9.0"
-  CURRENT_PROJECT_VERSION: "21"
+  MARKETING_VERSION: "1.10.0"
+  CURRENT_PROJECT_VERSION: "22"
   DEVELOPMENT_TEAM: FDWHNL3X82
   CODE_SIGN_STYLE: Automatic
   SWIFT_VERSION: "6.0"
